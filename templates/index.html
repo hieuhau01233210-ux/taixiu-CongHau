@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tài Xỉu Web</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background: #1e1e2f;
+            color: white;
+        }
+        .box {
+            background: #2b2b45;
+            padding: 20px;
+            border-radius: 15px;
+            width: 350px;
+            margin: auto;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .tai { background: red; color: white; }
+        .xiu { background: blue; color: white; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>🎲 GAME TÀI XỈU 🎲</h1>
+    <h2>Số dư: {{ balance }} VNĐ</h2>
+
+    {% if result %}
+        <h3>{{ result }}</h3>
+        <p>Xúc xắc: {{ dice }}</p>
+        <p>Tổng: {{ total }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <input type="number" name="bet" placeholder="Nhập tiền cược" required><br><br>
+        <button class="tai" name="choice" value="tai">TÀI (11-18)</button>
+        <button class="xiu" name="choice" value="xiu">XỈU (3-10)</button>
+    </form>
+</div>
+
+</body>
+</html>
